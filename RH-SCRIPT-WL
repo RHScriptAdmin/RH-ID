@@ -15,7 +15,23 @@ if game.PlaceId == 735030788 then --divina park
             end
         end
     end
-    end)
+end)
+spawn(function()
+while wait() do
+for i,x in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Captcha.FloatArea:GetChildren()) do
+if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Enabled == true then
+wait(1)
+if x.Name == "FloatBox" then
+firesignal(x.MouseButton1Click)
+end
+end
+end
+wait(3)
+if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Visible == true then
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Close.MouseButton1Down)
+end
+end
+end)
 spawn(function()
 wait(5)
 
@@ -82,13 +98,14 @@ end
 ---------------------------------------------------------------------------------------------------------------------
 if game.PlaceId == EnchantixID then --enchantix
         fireButton1(SchoolTP)
-while wait(15) do
+while wait() do
         fireButton1(SchoolTP)
+wait(7)
 end
 elseif game.PlaceId == SchoolID then --school
+while wait() do
         fireButton1(EnchantixTP)
-while wait(15) do
-        fireButton1(EnchantixTP)
+wait(7)
 end
 end
 end)
