@@ -18,77 +18,26 @@ if game.PlaceId == 735030788 then --divina park
     end)
 spawn(function()
 wait(2)
-
-local EnchantixID = 1067560271
-local EnchantixTP = game:GetService("Players").LocalPlayer.PlayerGui.ScepterTeleportGui.Popups.Enchantix.Enchantix
-local SchoolID = 1765700510
-local SchoolTP = game:GetService("Players").LocalPlayer.PlayerGui.ScepterTeleportGui.Popups.RoyaleHigh["New Royale"]
-
-if game.PlaceId == EnchantixID then --enchantix
-local l__ScepterTeleportGui__1 = game.Players.LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("ScepterTeleportGui");
-local u1 = false;
-l__ScepterTeleportGui__1.Frame.Changed:Connect(function()
-	if l__ScepterTeleportGui__1.Frame.Visible ~= u1 then
-		u1 = l__ScepterTeleportGui__1.Frame.Visible;
-		game.ReplicatedStorage.Network.Events.Gui.TeleportGuiScepterAnimation:FireServer(u1);
-	end;
-end);
-
-	u1 = true;
-	game.ReplicatedStorage.Network.Events.Gui.TeleportGuiScepterAnimation:FireServer(u1);
-	wait(1.6);
-	local l__Frame__2 = l__ScepterTeleportGui__1.Frame;
-	if not l__Frame__2.Visible then
-		l__Frame__2.Visible = true;
-		l__Frame__2.Position = UDim2.new(0.037, 0, 1, 0);
-		l__Frame__2:TweenPosition(UDim2.new(0.037, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.5, true);
-	end;
+local SceptorTeleport = game:GetService("ReplicatedStorage").SceptorTeleport
+if game.PlaceId == 1067560271 then
+        SceptorTeleport:FireServer("New Royale")
+    elseif game.PlaceId == 1765700510 then
+        SceptorTeleport:FireServer("Enchantix")
+end
+end)
+spawn(function()
+while wait(0.01) do
+for i,x in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Captcha.FloatArea:GetChildren()) do
+if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Enabled == true then
+wait(1)
+if x.Name == "FloatBox" then
+firesignal(x.MouseButton1Click)
+end
+end
+end
 wait(3)
-end
-if game.PlaceId == SchoolID then --enchantix
-local l__ScepterTeleportGui__1 = game.Players.LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("ScepterTeleportGui");
-local u1 = false;
-l__ScepterTeleportGui__1.Frame.Changed:Connect(function()
-	if l__ScepterTeleportGui__1.Frame.Visible ~= u1 then
-		u1 = l__ScepterTeleportGui__1.Frame.Visible;
-		game.ReplicatedStorage.Network.Events.Gui.TeleportGuiScepterAnimation:FireServer(u1);
-	end;
-end);
-
-	u1 = true;
-	game.ReplicatedStorage.Network.Events.Gui.TeleportGuiScepterAnimation:FireServer(u1);
-	wait(1.6);
-	local l__Frame__2 = l__ScepterTeleportGui__1.Frame;
-	if not l__Frame__2.Visible then
-		l__Frame__2.Visible = true;
-		l__Frame__2.Position = UDim2.new(0.037, 0, 1, 0);
-		l__Frame__2:TweenPosition(UDim2.new(0.037, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.5, true);
-	end;
-wait(3)
-end
-
----------------------------------------------------------------------------------------------------------------------
-function fireButton1(button)
-    for i, signal in next, getconnections(button.MouseButton1Click) do
-        signal:Fire()
-    end
-    for i, signal in next, getconnections(button.MouseButton1Down) do
-        signal:Fire()
-    end
-    for i, signal in next, getconnections(button.Activated) do
-        signal:Fire()
-    end
-end
----------------------------------------------------------------------------------------------------------------------
-if game.PlaceId == EnchantixID then --enchantix
-        fireButton1(SchoolTP)
-while wait(15) do
-        fireButton1(SchoolTP)
-end
-elseif game.PlaceId == SchoolID then --school
-        fireButton1(EnchantixTP)
-while wait(15) do
-        fireButton1(EnchantixTP)
+if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Visible == true then
+firesignal(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Close.MouseButton1Down)
 end
 end
 end)
