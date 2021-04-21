@@ -81,29 +81,29 @@ function fireButton1(button)
 end
 ---------------------------------------------------------------------------------------------------------------------
 if game.PlaceId == EnchantixID then --enchantix
+while true do
         fireButton1(SchoolTP)
-while wait(15) do
-        fireButton1(SchoolTP)
+        wait(15)
 end
 elseif game.PlaceId == SchoolID then --school
+while true do
         fireButton1(EnchantixTP)
-while wait(15) do
-        fireButton1(EnchantixTP)
+        wait(15)
 end
 end
 end)
 spawn(function()
-while wait(0.1) do
+while wait(1) do
 for i,x in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Captcha.FloatArea:GetChildren()) do
 if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Enabled == true then
-wait(1)
 if x.Name == "FloatBox" then
+    wait(1)
 firesignal(x.MouseButton1Click)
 end
 end
 end
-wait(3)
 if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Visible == true then
+    wait(2)
 firesignal(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Close.MouseButton1Down)
 end
 end
