@@ -3,18 +3,17 @@ if not game:IsLoaded() then
    print("not loaded")
 end
 wait(2)
-spawn(function()
-wait(2)
 if game.PlaceId == 735030788 then --divina park
     elseif game.PlaceId == 4728134592 then --Trading Hub
     else
+spawn(function()
+wait(2)
         for _, v in pairs(workspace.DIAMONDS:GetDescendants()) do
             if v:IsA("TouchTransmitter") then
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
             end
         end
-    end
     end)
 spawn(function()
 wait(2)
@@ -81,15 +80,15 @@ function fireButton1(button)
 end
 ---------------------------------------------------------------------------------------------------------------------
 if game.PlaceId == EnchantixID then --enchantix
-while true do
+    fireButton1(SchoolTP)
+    while wait(15) do
         fireButton1(SchoolTP)
-        wait(15)
-end
+    end
 elseif game.PlaceId == SchoolID then --school
-while true do
+    fireButton1(EnchantixTP)
+    while wait(15) do
         fireButton1(EnchantixTP)
-        wait(15)
-end
+    end
 end
 end)
 spawn(function()
@@ -108,3 +107,4 @@ firesignal(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Clo
 end
 end
 end)
+end
