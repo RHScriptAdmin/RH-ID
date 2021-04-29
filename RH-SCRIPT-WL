@@ -96,13 +96,13 @@ while wait(1) do
 for i,x in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Captcha.FloatArea:GetChildren()) do
 if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Enabled == true then
 if x.Name == "FloatBox" then
-    wait(1)
+wait(2)
 firesignal(x.MouseButton1Click)
 end
 end
 end
 if game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Visible == true then
-    wait(2)
+wait(3)
 firesignal(game:GetService("Players").LocalPlayer.PlayerGui.CaptchaGui.Award.Close.MouseButton1Down)
 end
 end
