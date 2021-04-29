@@ -1,4 +1,4 @@
---fixed autofarm
+--[[fixed autofarm]]--
 if not game:IsLoaded() then
    game.Loaded:Wait()
    print("not loaded")
