@@ -101,3 +101,4 @@ local data =
 end
 print("no")
 game:service('Players').LocalPlayer:Kick("You havent paid or your payment is on pending. Please contact Al3xander#0009 to solve this issue.")
+--finished
