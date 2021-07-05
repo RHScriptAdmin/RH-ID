@@ -17,7 +17,7 @@ wait(2)
         end
     end)
 spawn(function()
-wait(15)
+wait(18)
 
 local EnchantixID = 1067560271
 local EnchantixTP = game:GetService("Players").LocalPlayer.PlayerGui.ScepterTeleportGui.Popups.Enchantix.Enchantix
