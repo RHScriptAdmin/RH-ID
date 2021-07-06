@@ -11,13 +11,12 @@ wait(2)
         for _, v in pairs(workspace.DIAMONDS:GetDescendants()) do
             if v:IsA("TouchTransmitter") then
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-                wait(0.5)
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
             end
         end
     end)
 spawn(function()
-wait(18)
+wait(2)
 
 local EnchantixID = 1067560271
 local EnchantixTP = game:GetService("Players").LocalPlayer.PlayerGui.ScepterTeleportGui.Popups.Enchantix.Enchantix
